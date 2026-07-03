@@ -69,50 +69,62 @@ data_inicial = st.sidebar.date_input("Data inicial", df['Data'].min())
 data_final = st.sidebar.date_input("Data final", df['Data'].max())
 
 # Filtro de idade
-idade = st.sidebar.multiselect(
+# idade = st.sidebar.multiselect(
+#     "Faixa de idade:",
+#     options=df['Idade'].unique(),
+#     default=df['Idade'].unique()
+# )
+
+idade = st.sidebar.pills(
     "Faixa de idade:",
     options=df['Idade'].unique(),
-    default=df['Idade'].unique()
+    default=df['Idade'].unique(),
+    selection_mode="multi"
 )
 
 # Filtro decisão
 
-decisao = st.sidebar.multiselect(
+decisao = st.sidebar.pills(
     "Tipo de decisão:",
     options=df['Decisão'].unique(),
-    default=df['Decisão'].unique()
+    default=df['Decisão'].unique(),
+    selection_mode="multi"
 )
 
 # Filtro de batismo
 
-batismo = st.sidebar.multiselect(
+batismo = st.sidebar.pills(
     "Situação referente ao batismo:",
     options=df['Batizado'].unique(),
-    default=df['Batizado'].unique()
+    default=df['Batizado'].unique(),
+    selection_mode="multi"
 )
 
 # Filtro de estado civil
 
-estado_civil = st.sidebar.multiselect(
+estado_civil = st.sidebar.pills(
     "Estado civil:",
     options=df['Estado Civil'].unique(),
-    default=df['Estado Civil'].unique()
+    default=df['Estado Civil'].unique(),
+    selection_mode="multi"
 )
 
 # Filtro de convite
 
-convite = st.sidebar.multiselect(
+convite = st.sidebar.pills(
     "Como chegou na VIVA:",
     options=df['Forma de convite'].unique(),
-    default=df['Forma de convite'].unique()
+    default=df['Forma de convite'].unique(),
+    selection_mode="multi"
 )
 
 # Filtro de ambiente da decisão
 
-ambiente = st.sidebar.multiselect(
+ambiente = st.sidebar.pills(
     "Ambiente da decisão:",
     options=df['Período do culto'].unique(),
-    default=df['Período do culto'].unique()
+    default=df['Período do culto'].unique(),
+    selection_mode="multi"
 )
 
 # Filtro de ano
@@ -235,11 +247,11 @@ fig5.update_traces(textposition='outside')
 # df_filtrado.sort_values(by='Mês-Numério', inplace=True)
 
 fig6 = px.pie(df_filtrado, 
-             names='Mês',
+             names='Ano',
              color_discrete_sequence=px.colors.qualitative.G10)
 
 fig6.update_layout(template='plotly_dark',
-                  title='Mês',
+                  title='Ano',
                   title_x=0.5)
 fig6.update_traces(textposition='outside')
 
