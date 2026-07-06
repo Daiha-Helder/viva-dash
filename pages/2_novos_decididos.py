@@ -65,15 +65,11 @@ df.reset_index(drop=True, inplace=True)
 # --- Adicionando filtros ---
 
 # Filtro por intervalo de datas
-data_inicial = st.sidebar.date_input("Data inicial", df['Data'].min())
-data_final = st.sidebar.date_input("Data final", df['Data'].max())
+data_inicial = st.sidebar.date_input("Data inicial", df['Data'].min(), format="DD/MM/YYYY")
+data_final = st.sidebar.date_input("Data final", df['Data'].max(), format="DD/MM/YYYY")
 
 # Filtro de idade
-# idade = st.sidebar.multiselect(
-#     "Faixa de idade:",
-#     options=df['Idade'].unique(),
-#     default=df['Idade'].unique()
-# )
+
 
 idade = st.sidebar.pills(
     "Faixa de idade:",
