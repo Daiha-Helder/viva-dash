@@ -1,9 +1,7 @@
 import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
-import locale
 
-locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
 
 
 def data_preparation(dados1, dados2):
