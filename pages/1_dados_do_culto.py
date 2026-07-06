@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
-import locale
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -12,7 +11,7 @@ import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__))))
 from src.utils import data_preparation
 
-locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
+
 ws, hs = 900*1.5, 400*1.5
 
 
